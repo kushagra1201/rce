@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 const router = require("./routeHandler");
 
-app.use("/", router);
+app.use("/code", router);
 
 app.listen(PORT, function (err) {
   if (err) console.log(err);

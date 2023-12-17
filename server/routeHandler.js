@@ -13,7 +13,7 @@ router.post("/code", (req, res) => {
     res.send("Not all fields there");
   }
 
-  axios.post("localhost:9000/code", req.body).then(
+  axios.post(`localhost:9000/code/${language}`, req.body).then(
     (response) => {
       res.json(response.data);
     },
