@@ -13,13 +13,14 @@ router.post("/code", (req, res) => {
     res.send("Not all fields there");
   }
 
-  axios.post(`localhost:9000/code/${language}`, req.body).then(
+  axios.post(`http://localhost:9000/code/${language}`, req.body).then(
     (response) => {
       res.json(response.data);
     },
     (error) => {
       res.status(500);
-      res.send("Maybe internal error");
+      console.error(error);
+      res.send("JNL");
     }
   );
 });

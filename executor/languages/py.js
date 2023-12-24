@@ -5,11 +5,10 @@ module.exports = async (req, res) => {
 
   const codeFile = `./temp/${sessionId}_code.${language}`;
   const inputFile = `./temp/${sessionId}_input`;
-  const binaryFile = `./temp/${sessionId}_binary.out`;
 
-  const result = await execute(
-    `g++ ${codeFile} -o ${binaryFile} && ${binaryFile} < ${inputFile}`,
-    [codeFile, inputFile, binaryFile]
-  );
+  const result = await execute(`python ${codeFile} < ${inputFile}`, [
+    codeFile,
+    inputFile,
+  ]);
   res.json(result);
 };
