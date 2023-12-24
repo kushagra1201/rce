@@ -15,7 +15,7 @@ function App() {
   const [isSessionModalOpen, setIsSessionModalOpen] = useState("hidden");
 
   return (
-    <>
+    <main className="content">
       <SessionModal
         setIsSessionModalOpen={setIsSessionModalOpen}
         isSessionModalOpen={isSessionModalOpen}
@@ -26,7 +26,7 @@ function App() {
         <InputEditor />
         <OutputEditor />
       </div>
-    </>
+    </main>
   );
 }
 

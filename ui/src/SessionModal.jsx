@@ -12,8 +12,14 @@ function SessionModal({ setIsSessionModalOpen, isSessionModalOpen }) {
           Close
         </button>
         <h3>Session Details</h3>
-        <input type="text" className="session-input" placeholder="Session ID" />
-        <button className="join-btn">Join</button>
+        <div className="session-form">
+          <input
+            type="text"
+            className="session-input"
+            placeholder="Session ID"
+          />
+          <button className="join-btn">Join</button>
+        </div>
       </div>
     </div>
   );
