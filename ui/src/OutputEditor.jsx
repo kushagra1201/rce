@@ -6,13 +6,15 @@ import "ace-builds/src-noconflict/theme-dracula";
 import "ace-builds/src-noconflict/ext-language_tools";
 import EditorRoot from "./EditorRoot";
 
-function onChange(newValue) {
-  console.log("change", newValue);
-}
-
-function OutputEditor() {
+function OutputEditor({ output }) {
   return (
-    <EditorRoot mode="text" name="output" onChange={onChange} readOnly={true} />
+    <EditorRoot
+      mode="text"
+      name="output"
+      onChange={() => {}}
+      readOnly={true}
+      value={output}
+    />
   );
 }
 

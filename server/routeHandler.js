@@ -20,7 +20,7 @@ router.post("/code", (req, res) => {
     (error) => {
       res.status(500);
       console.error(error);
-      res.send("JNL");
+      res.send("Failed to connect to executor");
     }
   );
 });

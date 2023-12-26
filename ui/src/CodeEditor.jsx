@@ -1,13 +1,35 @@
 import React from "react";
 import EditorRoot from "./EditorRoot";
 
-function onChange(newValue) {
-  console.log("change", newValue);
-}
+function CodeEditor({ code, setCode, language }) {
+  function onChange(newValue) {
+    setCode(newValue);
+  }
 
-function CodeEditor() {
+  function setMode(language) {
+    switch (language) {
+      case "cpp":
+        return "c_cpp";
+
+      case "py":
+        return "python";
+
+      case "js":
+        return "javascript";
+
+      default:
+        return "text";
+    }
+  }
+
   return (
-    <EditorRoot mode="c_cpp" name="code" onChange={onChange} readOnly={false} />
+    <EditorRoot
+      mode={setMode(language)}
+      name="code"
+      onChange={onChange}
+      readOnly={false}
+      value={code}
+    />
   );
 }
 
